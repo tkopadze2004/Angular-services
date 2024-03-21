@@ -1,0 +1,8 @@
+<div class="cont">
+  @for( user of users ; track user; let index = $index){
+  <div class="card" >
+    <pre><h2> User is: </h2> {{ users | json | titlecase}}</pre>
+    <button (click)="delete(index)">Delete</button>
+  </div>
+  }
+</div>

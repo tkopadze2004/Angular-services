@@ -1,0 +1,94 @@
+<form [formGroup]="form">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" />
+    <div class="error">
+      <div
+        *ngIf="
+          form.get('name')?.hasError('required') && form.get('name')?.touched
+        "
+      >
+        name is required
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="lastname">lastname</label>
+    <input type="text" id="lastname" formControlName="lastname" />
+    <div class="error">
+      <div
+        *ngIf="
+          form.get('lastname')?.hasError('required') &&
+          form.get('lastname')?.touched
+        "
+      >
+        lastname is required
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="email">email</label>
+    <input type="email" id="email" formControlName="email" />
+    <div class="error">
+      <div
+        *ngIf="
+          form.get('email')?.hasError('required') && form.get('email')?.touched
+        "
+      >
+        email is required
+      </div>
+      <div
+        *ngIf="
+          form.get('email')?.hasError('email') && form.get('email')?.touched
+        "
+      >
+        Invalid meil
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="birthdate">birthdate</label>
+    <input type="date" id="birthdate" formControlName="birthdate" />
+    <div class="error">
+      <div
+        *ngIf="
+          form.get('birthdate')?.hasError('required') &&
+          form.get('birthdate')?.touched
+        "
+      >
+        birthdate is required
+      </div>
+      <div
+        *ngIf="
+          form.get('birthdate')?.hasError('age') &&
+          form.get('birthdate')?.touched
+        "
+      >
+        Invalid age
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="number">Number</label>
+    <input type="tel" id="number" formControlName="number" />
+    <div class="error">
+      <div
+        *ngIf="
+          form.get('number')?.hasError('required') &&
+          form.get('number')?.touched
+        "
+      >
+        number is required
+      </div>
+      <div
+        *ngIf="
+          form.get('number')?.hasError('minlength') &&
+          form.get('number')?.touched
+        "
+      >
+        Number must contain 8 digits
+      </div>
+    </div>
+  </div>
+  <button (click)="submit()" style="font-size: 20px">submit</button>
+</form>

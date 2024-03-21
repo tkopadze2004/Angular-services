@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  background-color: rgba(213, 210, 210, 0.882);
+  padding: 15px;
+  justify-content: center;
+  margin-top: 10px;
+  .error {
+    color: red;
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+  input {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+
+    &.ng-invalid.ng-touched {
+      border-color: red;
+    }
+  }
+}
